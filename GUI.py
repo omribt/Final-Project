@@ -1,5 +1,5 @@
 # Name: Omri Ben Tov
-#ID: 204087894
+
 
 import tkinter as tk
 from tkinter import *
@@ -18,13 +18,13 @@ def frame_raise(frame): # This function switches frames when called
 
 def screen_1():
     global frame1
-    def callback():    #This function creates a listbox out of path givem by user
+    def callback():    #This function creates a listbox out of path given by user
         global path
         path = (textbox.get())
         try:                   # Validation of the path given
             os.chdir(path)
             files = os.listdir(path)
-            b2.grid_forget()            # the grid_forget and delete commands are to erase the listbox when 'choose is pressed again
+            b2.grid_forget()            # the grid_forget and delete commands are to erase the listbox when 'choose' is pressed again
             listbox.grid_forget()
             listbox.delete(0,END)
             listbox.grid()
@@ -46,8 +46,8 @@ def screen_1():
     b1.grid_configure()
     frame_raise(frame1)
 
-def nextCallBack(listbox):      # Here we create a list of the files chosen cy user and call screen 2
-     chosen = []               # this list contain the files chosen and i will use it till the end of the program
+def nextCallBack(listbox):      # Here we create a list of the files chosen by user and call screen 2
+     chosen = []               # this list contain the files chosen and I will use it till the end of the program
      selected = listbox.curselection()
      for i in selected:
          values = listbox.get(i)
@@ -55,7 +55,7 @@ def nextCallBack(listbox):      # Here we create a list of the files chosen cy u
      screen_2(chosen)
 
 def screen_2(chosen):
-    def backbutton(frame1):   #This function takes us back to frame 1 when 'back button (b4) is pressed. it clears the image and the buttons
+    def backbutton(frame1):   #This function takes us back to frame 1 when 'back' button (b4) is pressed. it clears the image and the buttons
         frame_raise(frame1)
         img.destroy()
         b3.destroy()
@@ -95,7 +95,7 @@ def  screen_3(chosen):  # The third frame is called by the second next button (b
     frame_raise(frame3)     # Raise frame 3
 
 
-def screen_4(chosen):      # This function is called by the third 'next button (b5). it takes the user process selection and calls for screen 4
+def screen_4(chosen):      # This function is called by the third 'next' button (b5). it takes the user process selection and calls for screen 4
     global operation
     operation = list(listbox2.curselection())
     global frame4
