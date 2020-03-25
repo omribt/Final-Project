@@ -1,5 +1,4 @@
 # Name: Omri Ben Tov
-#ID: 204087894
 
 import tkinter as tk
 from tkinter import *
@@ -67,7 +66,7 @@ def mirrorPicture(chosen, targetimagepath):
         new_pixels = new_pic.load()
         for i in range(w):
             for j in range(h):
-            # Here i copy pixels from the first col of the original image to last one of the new image and repeat
+            # Here I copy pixels from the first col of the original image to last one of the new image and repeat
                 side = graypic.getpixel((i,j))
                 new_pic.putpixel((w,j), side)
             w -= 1
